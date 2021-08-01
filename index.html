@@ -14,7 +14,7 @@
         <h1>Spin<span style="color: #E94F4D;">Code</span>Academy GLOSSARY</h1>
     </div>
     <div class="content">
-        <table class="table">
+        <table id="table">
             <tr>
                 <th>Pojam</th>
                 <th>Opis</th>
@@ -31,162 +31,21 @@
                 <td>The Collaboration Platform for API Development</td>
                 <td>Ivan</td>
             </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
         </table>
     </div>
 </body>
+<script>
+    var table = document.getElementById('table');
+
+    var row = table.insertRow(table.rows.length);
+
+    var term = row.insertCell(0);
+    var description = row.insertCell(1);
+    var autor = row.insertCell(2);
+
+    term.innerHTML = "term";
+    description.innerHTML = "description";
+    autor.innerHTML = "autor";
+</script>
 
 </html>
