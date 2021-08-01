@@ -11,41 +11,125 @@
 
 <body>
     <div class="header">
-        <h1>Spin<span style="color: #E94F4D;">Code</span>Academy GLOSSARY</h1>
+        <h1>Spin<span style="color: #E94F4D;">Code</span>Academy POJMOVNIK</h1>
     </div>
     <div class="content">
+        <div class="new">
+            <label for="name">Pojam</label>
+            <input type="text" name="name" id="new-name">
+            <label for="description">Opis</label>
+            <textarea id="new-description" name="description" rows="4" cols="50"></textarea>
+            <button onclick="insertNew()" class="add-new-button" >ADD NEW</button>
+        </div>
         <table id="table">
-            <tr>
-                <th>Pojam</th>
-                <th>Opis</th>
-                <th>Autor</th>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>software for tracking changes in any set of files, usually used for coordinating work among
-                    programmers collaboratively developing source code during software development</td>
-                <td>Ana</td>
-            </tr>
-            <tr>
-                <td>Postman</td>
-                <td>The Collaboration Platform for API Development</td>
-                <td>Ivan</td>
-            </tr>
         </table>
     </div>
 </body>
 <script>
-    var table = document.getElementById('table');
+    allTerms = [];
+    url = 'https://jupitermobiletest.jupiter-software.com:30081/jupitermobilex/gen/api/food';
+    method = 'POST';
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    table = document.getElementById('table');
+    newName = document.getElementById('new-name');
+    newDescription = document.getElementById('new-description');
 
-    var row = table.insertRow(table.rows.length);
+    init();
 
-    var term = row.insertCell(0);
-    var description = row.insertCell(1);
-    var autor = row.insertCell(2);
+    function init() {
+        getGlossary();
+    }
 
-    term.innerHTML = "term";
-    description.innerHTML = "description";
-    autor.innerHTML = "autor";
+    function setTable() {
+        clearTable();
+        for (let i = 0; i < allTerms.length; i++) {
+            var row = table.insertRow(table.rows.length);
+
+            var term = row.insertCell(0);
+            var description = row.insertCell(1);
+            var autor = row.insertCell(2);
+
+            term.innerHTML = allTerms[i].Term;
+            description.innerHTML = allTerms[i].Description;
+            autor.innerHTML = allTerms[i].Username;
+        }
+        // var row = table.insertRow(table.rows.length);
+
+        // var term = row.insertCell(0);
+        // var description = row.insertCell(1);
+        // var autor = row.insertCell(2);
+
+        // term.innerHTML = "term";
+        // description.innerHTML = "description";
+        // autor.innerHTML = "autor";
+    }
+
+    function getGlossary() {
+        fetch(url, {
+            method: method,
+            body: JSON.stringify({
+                "queries": [
+                    {
+                        "query": "SpinCodeAcademy",
+                        "params": {
+                            "action": "getall",
+                            "userid": 1
+                        }
+                    }
+                ]
+            }),
+            headers: headers
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json()
+            }
+        }).then(function (data) {
+            allTerms = data;
+            setTable();
+        }).catch(function (err) {
+            console.warn('Something went wrong.', err);
+        });
+    }
+
+    function clearTable() {
+        table.innerHTML = `          <tr style="color: #E94F4D;">
+                <th>Pojam</th>
+                <th>Opis</th>
+                <th>Autor</th>
+            </tr>`;
+    }
+
+    function insertNew() {
+        fetch(url, {
+            method: method,
+            body: JSON.stringify({
+                "queries": [
+                    {
+                        "query": "SpinCodeAcademy",
+                        "params": {
+                            "action": "insert",
+                            "userid": 1,
+                            "term": newName.value,
+                            "description": newDescription.value
+                        }
+                    }
+                ]
+            }),
+            headers: headers
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                alert("ERROR");
+            }
+        }).then(function (data) {
+            getGlossary();
+        }).catch(function (err) {
+            alert("ERROR");
+        });
+    }
 </script>
 
 </html>

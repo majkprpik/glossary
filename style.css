@@ -14,6 +14,12 @@ body {
     padding: 0px;
 }
 
+.new {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
 #table {
     margin: auto;
     width: 50%;
@@ -30,4 +36,22 @@ th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.add-new-button {
+    height: 50px;
+    width: 100px;
+    background-color: #E94F4D;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
